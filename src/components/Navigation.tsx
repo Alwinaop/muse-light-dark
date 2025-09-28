@@ -22,7 +22,7 @@ export const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              BusinessPro
+              Ashwin Systems
             </div>
           </div>
 
