@@ -2,6 +2,7 @@ import { Moon, Sun, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   const { theme, setTheme } = useTheme();
@@ -64,11 +65,11 @@ export const Navigation = () => {
 
             {/* Auth Buttons */}
             <div className="hidden sm:flex items-center space-x-2">
-              <Button variant="outline" size="sm">
-                Sign In
+              <Button variant="outline" size="sm" asChild>
+                <Link to="/signin">Sign In</Link>
               </Button>
-              <Button size="sm" className="gradient-primary">
-                Sign Up
+              <Button size="sm" className="gradient-primary" asChild>
+                <Link to="/signup">Sign Up</Link>
               </Button>
             </div>
 
@@ -107,11 +108,11 @@ export const Navigation = () => {
                 Contact
               </button>
               <div className="flex space-x-2 px-4 pt-2 sm:hidden">
-                <Button variant="outline" size="sm" className="flex-1">
-                  Sign In
+                <Button variant="outline" size="sm" className="flex-1" asChild>
+                  <Link to="/signin">Sign In</Link>
                 </Button>
-                <Button size="sm" className="flex-1 gradient-primary">
-                  Sign Up
+                <Button size="sm" className="flex-1 gradient-primary" asChild>
+                  <Link to="/signup">Sign Up</Link>
                 </Button>
               </div>
             </div>
