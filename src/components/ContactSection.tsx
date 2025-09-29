@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -48,44 +48,46 @@ export const ContactSection = () => {
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Phone</h4>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                <a 
+                  href="mailto:ashwinsalessystems@gmail.com"
+                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-smooth group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-bounce">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Email</h4>
-                    <p className="text-muted-foreground">hello@ashwinsystems.com</p>
+                    <h4 className="font-semibold group-hover:text-primary transition-smooth">Email</h4>
+                    <p className="text-muted-foreground">ashwinsalessystems@gmail.com</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-primary" />
+                <a 
+                  href="tel:+919987670993"
+                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-smooth group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-bounce">
+                    <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Office</h4>
-                    <p className="text-muted-foreground">123 Business Ave, Suite 100<br />New York, NY 10001</p>
+                    <h4 className="font-semibold group-hover:text-primary transition-smooth">Phone</h4>
+                    <p className="text-muted-foreground">+91 9987670993</p>
                   </div>
-                </div>
-              </div>
+                </a>
 
-              <div className="pt-8">
-                <h4 className="font-semibold mb-4">Business Hours</h4>
-                <div className="space-y-2 text-muted-foreground">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM</p>
-                  <p>Sunday: Closed</p>
-                </div>
+                <a 
+                  href="https://wa.me/919987670993"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-smooth group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-bounce">
+                    <MessageCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold group-hover:text-primary transition-smooth">WhatsApp</h4>
+                    <p className="text-muted-foreground">+91 9987670993</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

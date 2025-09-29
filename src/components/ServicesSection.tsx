@@ -1,84 +1,71 @@
 import { Headphones, Sparkles, MonitorCog, ShieldCheck, Network, Wrench, PackageCheck, RefreshCw, ShieldAlert, Cpu, HardDrive, Fingerprint, Camera } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
     icon: Headphones,
     title: "PC Technical Support",
-    description: "Comprehensive technical assistance for all your computer-related issues with prompt response and expert solutions.",
-    features: ["Remote Support", "On-Site Service", "24/7 Availability"]
+    description: "Comprehensive technical assistance for all your computer-related issues with prompt response and expert solutions."
   },
   {
     icon: Sparkles,
     title: "PC Cleaning Services",
-    description: "Professional cleaning and maintenance to keep your PC running smoothly and extend its lifespan.",
-    features: ["Dust Removal", "Component Cleaning", "Performance Boost"]
+    description: "Professional cleaning and maintenance to keep your PC running smoothly and extend its lifespan."
   },
   {
     icon: MonitorCog,
     title: "PC Setup & Installation",
-    description: "Complete setup and configuration of new systems, ensuring optimal performance from day one.",
-    features: ["Hardware Assembly", "Software Installation", "System Configuration"]
+    description: "Complete setup and configuration of new systems, ensuring optimal performance from day one."
   },
   {
     icon: ShieldCheck,
     title: "System Security Testing",
-    description: "Thorough security audits and vulnerability assessments to protect your systems from threats.",
-    features: ["Vulnerability Scanning", "Security Reports", "Risk Assessment"]
+    description: "Thorough security audits and vulnerability assessments to protect your systems from threats."
   },
   {
     icon: Network,
     title: "Networking Services",
-    description: "Professional network setup, configuration, and troubleshooting for seamless connectivity.",
-    features: ["Network Setup", "Wi-Fi Configuration", "Troubleshooting"]
+    description: "Professional network setup, configuration, and troubleshooting for seamless connectivity."
   },
   {
     icon: Wrench,
     title: "Hardware Repair & Upgrades",
-    description: "Expert hardware diagnostics, repairs, and upgrades to enhance your system's performance.",
-    features: ["Component Testing", "Part Replacement", "Performance Tuning"]
+    description: "Expert hardware diagnostics, repairs, and upgrades to enhance your system's performance."
   },
   {
     icon: PackageCheck,
     title: "Software Repair & Upgrades",
-    description: "Comprehensive software troubleshooting, updates, and installations for optimal functionality.",
-    features: ["Bug Fixes", "Software Updates", "Application Installation"]
+    description: "Comprehensive software troubleshooting, updates, and installations for optimal functionality."
   },
   {
     icon: RefreshCw,
     title: "Operating System Updates",
-    description: "Keep your system secure and efficient with the latest OS updates and patches.",
-    features: ["OS Installation", "Update Management", "Driver Updates"]
+    description: "Keep your system secure and efficient with the latest OS updates and patches."
   },
   {
     icon: ShieldAlert,
     title: "Anti-Virus Installation & Removal",
-    description: "Professional antivirus solutions to protect your system from malware and security threats.",
-    features: ["Virus Removal", "Antivirus Setup", "Real-time Protection"]
+    description: "Professional antivirus solutions to protect your system from malware and security threats."
   },
   {
     icon: Cpu,
     title: "Motherboard Replacement",
-    description: "Expert motherboard replacement and installation services with data preservation.",
-    features: ["Board Diagnosis", "Replacement", "Data Migration"]
+    description: "Expert motherboard replacement and installation services with data preservation."
   },
   {
     icon: HardDrive,
     title: "Memory Upgrades",
-    description: "Boost your system's performance with professional RAM upgrades and optimization.",
-    features: ["RAM Installation", "Compatibility Check", "Performance Testing"]
+    description: "Boost your system's performance with professional RAM upgrades and optimization."
   },
   {
     icon: Fingerprint,
     title: "Biometric Installation",
-    description: "Advanced biometric security systems for enhanced access control and authentication.",
-    features: ["Fingerprint Scanners", "Face Recognition", "Access Control"]
+    description: "Advanced biometric security systems for enhanced access control and authentication."
   },
   {
     icon: Camera,
     title: "CCTV Installation",
-    description: "Professional CCTV camera installation and monitoring solutions for complete security coverage.",
-    features: ["Camera Setup", "Remote Monitoring", "Storage Solutions"]
+    description: "Professional CCTV camera installation and monitoring solutions for complete security coverage."
   }
 ];
 
@@ -101,8 +88,8 @@ export const ServicesSection = () => {
           </div>
           <div className="fade-in-up stagger-2">
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We offer a full spectrum of digital services designed to accelerate your business growth 
-              and establish a strong online presence.
+              We offer a full spectrum of technical services designed to keep your systems running 
+              smoothly and securely.
             </p>
           </div>
         </div>
@@ -123,16 +110,6 @@ export const ServicesSection = () => {
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm">
-                        <div className="w-2 h-2 rounded-full bg-primary mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
               </Card>
             </div>
           ))}
