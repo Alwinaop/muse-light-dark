@@ -1,42 +1,84 @@
-import { Code, Palette, Zap, Shield, TrendingUp, Users } from "lucide-react";
+import { Headphones, Sparkles, MonitorCog, ShieldCheck, Network, Wrench, PackageCheck, RefreshCw, ShieldAlert, Cpu, HardDrive, Fingerprint, Camera } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Code,
-    title: "Web Development",
-    description: "Custom websites and web applications built with cutting-edge technologies for optimal performance and user experience.",
-    features: ["Responsive Design", "Fast Loading", "SEO Optimized"]
+    icon: Headphones,
+    title: "PC Technical Support",
+    description: "Comprehensive technical assistance for all your computer-related issues with prompt response and expert solutions.",
+    features: ["Remote Support", "On-Site Service", "24/7 Availability"]
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Beautiful, intuitive designs that convert visitors into customers while providing exceptional user experiences.",
-    features: ["User Research", "Prototyping", "Brand Identity"]
+    icon: Sparkles,
+    title: "PC Cleaning Services",
+    description: "Professional cleaning and maintenance to keep your PC running smoothly and extend its lifespan.",
+    features: ["Dust Removal", "Component Cleaning", "Performance Boost"]
   },
   {
-    icon: Zap,
-    title: "Digital Marketing",
-    description: "Comprehensive digital marketing strategies that drive traffic, generate leads, and boost your online presence.",
-    features: ["Social Media", "Content Strategy", "PPC Campaigns"]
+    icon: MonitorCog,
+    title: "PC Setup & Installation",
+    description: "Complete setup and configuration of new systems, ensuring optimal performance from day one.",
+    features: ["Hardware Assembly", "Software Installation", "System Configuration"]
   },
   {
-    icon: Shield,
-    title: "Security Solutions",
-    description: "Robust security measures to protect your business data and ensure compliance with industry standards.",
-    features: ["Data Protection", "Threat Monitoring", "Compliance"]
+    icon: ShieldCheck,
+    title: "System Security Testing",
+    description: "Thorough security audits and vulnerability assessments to protect your systems from threats.",
+    features: ["Vulnerability Scanning", "Security Reports", "Risk Assessment"]
   },
   {
-    icon: TrendingUp,
-    title: "Analytics & Insights",
-    description: "Advanced analytics and reporting to help you make data-driven decisions and optimize performance.",
-    features: ["Real-time Data", "Custom Reports", "Performance Metrics"]
+    icon: Network,
+    title: "Networking Services",
+    description: "Professional network setup, configuration, and troubleshooting for seamless connectivity.",
+    features: ["Network Setup", "Wi-Fi Configuration", "Troubleshooting"]
   },
   {
-    icon: Users,
-    title: "Consulting Services",
-    description: "Expert guidance and strategic planning to help your business navigate digital transformation challenges.",
-    features: ["Strategy Planning", "Process Optimization", "Team Training"]
+    icon: Wrench,
+    title: "Hardware Repair & Upgrades",
+    description: "Expert hardware diagnostics, repairs, and upgrades to enhance your system's performance.",
+    features: ["Component Testing", "Part Replacement", "Performance Tuning"]
+  },
+  {
+    icon: PackageCheck,
+    title: "Software Repair & Upgrades",
+    description: "Comprehensive software troubleshooting, updates, and installations for optimal functionality.",
+    features: ["Bug Fixes", "Software Updates", "Application Installation"]
+  },
+  {
+    icon: RefreshCw,
+    title: "Operating System Updates",
+    description: "Keep your system secure and efficient with the latest OS updates and patches.",
+    features: ["OS Installation", "Update Management", "Driver Updates"]
+  },
+  {
+    icon: ShieldAlert,
+    title: "Anti-Virus Installation & Removal",
+    description: "Professional antivirus solutions to protect your system from malware and security threats.",
+    features: ["Virus Removal", "Antivirus Setup", "Real-time Protection"]
+  },
+  {
+    icon: Cpu,
+    title: "Motherboard Replacement",
+    description: "Expert motherboard replacement and installation services with data preservation.",
+    features: ["Board Diagnosis", "Replacement", "Data Migration"]
+  },
+  {
+    icon: HardDrive,
+    title: "Memory Upgrades",
+    description: "Boost your system's performance with professional RAM upgrades and optimization.",
+    features: ["RAM Installation", "Compatibility Check", "Performance Testing"]
+  },
+  {
+    icon: Fingerprint,
+    title: "Biometric Installation",
+    description: "Advanced biometric security systems for enhanced access control and authentication.",
+    features: ["Fingerprint Scanners", "Face Recognition", "Access Control"]
+  },
+  {
+    icon: Camera,
+    title: "CCTV Installation",
+    description: "Professional CCTV camera installation and monitoring solutions for complete security coverage.",
+    features: ["Camera Setup", "Remote Monitoring", "Storage Solutions"]
   }
 ];
 
