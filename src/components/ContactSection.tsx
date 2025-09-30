@@ -12,15 +12,15 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32">
+    <section id="contact" className="py-24 lg:py-36">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="fade-in-up mb-4">
-            <span className="text-primary font-semibold text-lg">Get in Touch</span>
+        <div className="text-center mb-20">
+          <div className="fade-in-up mb-6">
+            <span className="text-primary font-semibold text-base uppercase tracking-wider">Get in Touch</span>
           </div>
           <div className="fade-in-up stagger-1 mb-6">
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold leading-tight tracking-tight">
               Get in{" "}
               <span className="gradient-primary bg-clip-text text-transparent">
                 Touch
@@ -28,7 +28,7 @@ export const ContactSection = () => {
             </h2>
           </div>
           <div className="fade-in-up stagger-2">
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
               Have questions or need assistance? Contact us and we'll get back to you promptly.
             </p>
           </div>
@@ -92,11 +92,11 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="fade-in-right">
-            <Card className="shadow-card border-border/50">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send us a Message</CardTitle>
+            <Card className="shadow-elegant border-border/40 bg-card/50 backdrop-blur-sm">
+              <CardHeader className="space-y-2 p-8">
+                <CardTitle className="text-2xl font-heading font-semibold">Send us a Message</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-8 pt-0">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -148,7 +148,7 @@ export const ContactSection = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full gradient-primary shadow-glow hover:shadow-elegant transition-smooth"
+                    className="w-full gradient-primary shadow-glow hover:shadow-hover transition-smooth font-semibold rounded-xl"
                     size="lg"
                   >
                     Send Message

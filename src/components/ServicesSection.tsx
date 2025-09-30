@@ -71,23 +71,23 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 lg:py-32">
+    <section id="services" className="py-24 lg:py-36 bg-gradient-subtle">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="fade-in-up mb-4">
-            <span className="text-primary font-semibold text-lg">Our Services</span>
+        <div className="text-center mb-20">
+          <div className="fade-in-up mb-6">
+            <span className="text-primary font-semibold text-base uppercase tracking-wider">Our Services</span>
           </div>
           <div className="fade-in-up stagger-1 mb-6">
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold leading-tight tracking-tight">
               Comprehensive Solutions for{" "}
               <span className="gradient-primary bg-clip-text text-transparent">
-                Modern Business
+                Your Business
               </span>
             </h2>
           </div>
           <div className="fade-in-up stagger-2">
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
               We offer a full spectrum of technical services designed to keep your systems running 
               smoothly and securely.
             </p>
@@ -95,18 +95,18 @@ export const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={service.title} className={`fade-in-up stagger-${index % 3 + 1}`}>
-              <Card className="h-full group hover:shadow-elegant transition-smooth border-border/50 hover:border-primary/20">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-bounce">
-                    <service.icon className="w-6 h-6 text-primary" />
+              <Card className="h-full group hover:shadow-hover transition-smooth border-border/40 hover:border-primary/30 bg-card/50 backdrop-blur-sm overflow-hidden">
+                <CardHeader className="space-y-4 p-8">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-500">
+                    <service.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <CardTitle className="text-xl font-semibold group-hover:text-primary transition-smooth">
+                  <CardTitle className="text-xl font-heading font-semibold group-hover:text-primary transition-smooth">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-muted-foreground leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
