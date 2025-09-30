@@ -98,19 +98,24 @@ export const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={service.title} className={`fade-in-up stagger-${index % 3 + 1}`}>
-              <Card className="h-full group hover:shadow-hover transition-smooth border-border/40 hover:border-primary/30 bg-card/50 backdrop-blur-sm overflow-hidden">
-                <CardHeader className="space-y-4 p-8">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-500">
-                    <service.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl font-heading font-semibold group-hover:text-primary transition-smooth">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="h-full group relative">
+                {/* Animated gradient border effect */}
+                <div className="absolute inset-0 gradient-primary rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                
+                <Card className="h-full relative hover:shadow-hover transition-all duration-500 border-2 border-border/40 hover:border-primary/50 glass-card overflow-hidden group-hover:-translate-y-2">
+                  <CardHeader className="space-y-4 p-8">
+                    <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
+                      <service.icon className="w-8 h-8 text-primary-foreground" />
+                    </div>
+                    <CardTitle className="text-xl font-heading font-semibold group-hover:text-primary transition-smooth">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
             </div>
           ))}
         </div>

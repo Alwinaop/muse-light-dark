@@ -39,35 +39,35 @@ export const ContactSection = () => {
           <div className="fade-in-left">
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-                <p className="text-muted-foreground mb-8">
-                  Reach out to us through any of these channels.
+                <h3 className="text-3xl font-heading font-bold mb-6">Contact Information</h3>
+                <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                  Reach out to us through any of these channels. We're here to help!
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <a 
                   href="mailto:ashwinsalessystems@gmail.com"
-                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-smooth group"
+                  className="flex items-center space-x-5 p-6 rounded-2xl glass-card border-2 border-border/40 hover:border-primary/50 hover:shadow-card transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-bounce">
-                    <Mail className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-all shadow-lg">
+                    <Mail className="w-7 h-7 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold group-hover:text-primary transition-smooth">Email</h4>
+                    <h4 className="font-semibold text-lg group-hover:text-primary transition-smooth">Email</h4>
                     <p className="text-muted-foreground">ashwinsalessystems@gmail.com</p>
                   </div>
                 </a>
 
                 <a 
                   href="tel:+919987670993"
-                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-smooth group"
+                  className="flex items-center space-x-5 p-6 rounded-2xl glass-card border-2 border-border/40 hover:border-secondary/50 hover:shadow-card transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-bounce">
-                    <Phone className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all shadow-lg">
+                    <Phone className="w-7 h-7 text-secondary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold group-hover:text-primary transition-smooth">Phone</h4>
+                    <h4 className="font-semibold text-lg group-hover:text-secondary transition-smooth">Phone</h4>
                     <p className="text-muted-foreground">+91 9987670993</p>
                   </div>
                 </a>
@@ -76,13 +76,13 @@ export const ContactSection = () => {
                   href="https://wa.me/919987670993"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 rounded-lg hover:bg-accent transition-smooth group"
+                  className="flex items-center space-x-5 p-6 rounded-2xl glass-card border-2 border-border/40 hover:border-accent/50 hover:shadow-card transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-bounce">
-                    <MessageCircle className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl gradient-accent flex items-center justify-center group-hover:scale-110 transition-all shadow-lg">
+                    <MessageCircle className="w-7 h-7 text-accent-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold group-hover:text-primary transition-smooth">WhatsApp</h4>
+                    <h4 className="font-semibold text-lg group-hover:text-accent transition-smooth">WhatsApp</h4>
                     <p className="text-muted-foreground">+91 9987670993</p>
                   </div>
                 </a>
@@ -92,12 +92,14 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="fade-in-right">
-            <Card className="shadow-elegant border-border/40 bg-card/50 backdrop-blur-sm">
-              <CardHeader className="space-y-2 p-8">
-                <CardTitle className="text-2xl font-heading font-semibold">Send us a Message</CardTitle>
-              </CardHeader>
-              <CardContent className="p-8 pt-0">
-                <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="relative group">
+              <div className="absolute inset-0 gradient-primary rounded-3xl opacity-20 group-hover:opacity-30 blur-2xl transition-all duration-500"></div>
+              <Card className="shadow-elegant border-2 border-primary/20 glass-card relative">
+                <CardHeader className="space-y-2 p-8">
+                  <CardTitle className="text-2xl font-heading font-semibold">Send us a Message</CardTitle>
+                </CardHeader>
+                <CardContent className="p-8 pt-0">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium mb-2">
@@ -146,17 +148,18 @@ export const ContactSection = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full gradient-primary shadow-glow hover:shadow-hover transition-smooth font-semibold rounded-xl"
-                    size="lg"
-                  >
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                    <Button 
+                      type="submit" 
+                      className="w-full gradient-primary shadow-glow hover:shadow-hover hover:scale-[1.02] transition-all font-semibold rounded-2xl"
+                      size="lg"
+                    >
+                      Send Message
+                      <Send className="ml-2 h-4 w-4" />
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
