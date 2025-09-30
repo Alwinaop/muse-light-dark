@@ -21,16 +21,15 @@ export const ContactSection = () => {
           </div>
           <div className="fade-in-up stagger-1 mb-6">
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Let's Start Your{" "}
+              Get in{" "}
               <span className="gradient-primary bg-clip-text text-transparent">
-                Digital Journey
+                Touch
               </span>
             </h2>
           </div>
           <div className="fade-in-up stagger-2">
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to transform your business? Contact us today for a free consultation 
-              and discover how we can help you achieve your goals.
+              Have questions or need assistance? Contact us and we'll get back to you promptly.
             </p>
           </div>
         </div>
@@ -42,8 +41,7 @@ export const ContactSection = () => {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
                 <p className="text-muted-foreground mb-8">
-                  We're here to help and answer any question you might have. 
-                  We look forward to hearing from you.
+                  Reach out to us through any of these channels.
                 </p>
               </div>
 
@@ -132,17 +130,7 @@ export const ContactSection = () => {
                       type="email" 
                       placeholder="john@example.com"
                       className="transition-smooth focus:ring-primary/20"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium mb-2">
-                      Company (Optional)
-                    </label>
-                    <Input 
-                      id="company" 
-                      placeholder="Your Company Name"
-                      className="transition-smooth focus:ring-primary/20"
+                      required
                     />
                   </div>
 

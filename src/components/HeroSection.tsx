@@ -36,14 +36,20 @@ export const HeroSection = () => {
             </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="fade-in-up stagger-2 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="gradient-primary shadow-glow hover:shadow-elegant transition-smooth text-lg px-8 py-6">
+          {/* CTA Button */}
+          <div className="fade-in-up stagger-2 flex justify-center">
+            <Button 
+              size="lg" 
+              className="gradient-primary shadow-glow hover:shadow-elegant transition-smooth text-lg px-10 py-7"
+              onClick={() => {
+                const element = document.getElementById("contact");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 transition-smooth hover:shadow-card">
-              View Services
             </Button>
           </div>
         </div>

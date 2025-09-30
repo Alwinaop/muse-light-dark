@@ -95,11 +95,11 @@ export const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div key={service.title} className={`fade-in-up stagger-${index % 3 + 1}`}>
               <Card className="h-full group hover:shadow-elegant transition-smooth border-border/50 hover:border-primary/20">
-                <CardHeader className="pb-4">
+                <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-bounce">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
@@ -113,18 +113,6 @@ export const ServicesSection = () => {
               </Card>
             </div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="fade-in-up">
-            <p className="text-lg text-muted-foreground mb-6">
-              Ready to take your business to the next level?
-            </p>
-            <button className="gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-glow transition-smooth">
-              Explore All Services
-            </button>
-          </div>
         </div>
       </div>
     </section>
