@@ -1,11 +1,35 @@
-import { Moon, Sun, Menu } from "lucide-react";
+import { Moon, Sun, Menu, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import type { User as SupabaseUser } from "@supabase/supabase-js";
 
 export const Navigation = () => {
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -66,6 +90,38 @@ export const Navigation = () => {
               <span className="sr-only">Toggle theme</span>
             </Button>
 
+            {/* Desktop Auth Buttons */}
+            {user ? (
+              <div className="hidden md:flex items-center space-x-3">
+                <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-primary/10">
+                  <User className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">{user.email}</span>
+                </div>
+                <Button
+                  onClick={handleSignOut}
+                  variant="outline"
+                  size="sm"
+                  className="transition-smooth"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <div className="hidden md:flex items-center space-x-3">
+                <Link to="/signin">
+                  <Button variant="ghost" size="sm" className="transition-smooth">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/signup">
+                  <Button size="sm" className="gradient-primary shadow-glow transition-smooth">
+                    Sign Up
+                  </Button>
+                </Link>
+              </div>
+            )}
+
             {/* Mobile Menu Toggle */}
             <Button
               variant="outline"
@@ -100,6 +156,39 @@ export const Navigation = () => {
               >
                 Contact
               </button>
+              
+              {/* Mobile Auth Buttons */}
+              <div className="mt-6 pt-6 border-t border-border space-y-3 px-4">
+                {user ? (
+                  <>
+                    <div className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-primary/10">
+                      <User className="w-4 h-4 text-primary" />
+                      <span className="text-sm font-medium">{user.email}</span>
+                    </div>
+                    <Button
+                      onClick={handleSignOut}
+                      variant="outline"
+                      className="w-full transition-smooth"
+                    >
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Sign Out
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/signin" className="block">
+                      <Button variant="outline" className="w-full transition-smooth">
+                        Sign In
+                      </Button>
+                    </Link>
+                    <Link to="/signup" className="block">
+                      <Button className="w-full gradient-primary shadow-glow transition-smooth">
+                        Sign Up
+                      </Button>
+                    </Link>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         )}

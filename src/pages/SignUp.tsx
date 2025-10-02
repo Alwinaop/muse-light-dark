@@ -1,27 +1,140 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, EyeOff, ArrowLeft, Check } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 export const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Check if user is already logged in
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        navigate("/");
+      }
+    });
+  }, [navigate]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
     
-    // TODO: Implement Supabase authentication
-    setTimeout(() => {
+    if (formData.password !== formData.confirmPassword) {
+      toast({
+        title: "Passwords don't match",
+        description: "Please make sure your passwords match.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.password.length < 6) {
+      toast({
+        title: "Password too short",
+        description: "Password must be at least 6 characters long.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          emailRedirectTo: window.location.origin,
+          data: {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            company: formData.company,
+          },
+        },
+      });
+
+      if (error) {
+        toast({
+          title: "Error creating account",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else if (data.user) {
+        toast({
+          title: "Account created!",
+          description: "Welcome to Ashwin Systems. You're now signed in.",
+        });
+        navigate("/");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
+  };
+
+  const handleGoogleSignUp = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleGithubSignUp = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 py-12">
       {/* Background gradient */}
       <div className="absolute inset-0 gradient-hero opacity-5 dark:opacity-10"></div>
       
@@ -61,6 +174,8 @@ export const SignUp = () => {
                     id="firstName"
                     placeholder="John"
                     className="transition-smooth focus:ring-primary/20"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -72,6 +187,8 @@ export const SignUp = () => {
                     id="lastName"
                     placeholder="Doe"
                     className="transition-smooth focus:ring-primary/20"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -86,6 +203,8 @@ export const SignUp = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="transition-smooth focus:ring-primary/20"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -98,6 +217,8 @@ export const SignUp = () => {
                   id="company"
                   placeholder="Your company name"
                   className="transition-smooth focus:ring-primary/20"
+                  value={formData.company}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -109,8 +230,10 @@ export const SignUp = () => {
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
-                    placeholder="Create a password"
+                    placeholder="Create a password (min 6 characters)"
                     className="pr-10 transition-smooth focus:ring-primary/20"
+                    value={formData.password}
+                    onChange={handleChange}
                     required
                   />
                   <button
@@ -133,6 +256,8 @@ export const SignUp = () => {
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="Confirm your password"
                     className="pr-10 transition-smooth focus:ring-primary/20"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
                     required
                   />
                   <button
@@ -149,20 +274,8 @@ export const SignUp = () => {
                 <label className="flex items-start space-x-2 text-sm">
                   <input type="checkbox" className="rounded border-border mt-1" required />
                   <span>
-                    I agree to the{" "}
-                    <button type="button" className="text-primary hover:underline transition-smooth">
-                      Terms of Service
-                    </button>{" "}
-                    and{" "}
-                    <button type="button" className="text-primary hover:underline transition-smooth">
-                      Privacy Policy
-                    </button>
+                    I agree to the Terms of Service and Privacy Policy
                   </span>
-                </label>
-                
-                <label className="flex items-start space-x-2 text-sm">
-                  <input type="checkbox" className="rounded border-border mt-1" />
-                  <span>I want to receive updates and marketing communications</span>
                 </label>
               </div>
 
@@ -193,10 +306,20 @@ export const SignUp = () => {
 
             {/* Social sign up */}
             <div className="space-y-2">
-              <Button variant="outline" className="w-full transition-smooth hover:shadow-card">
+              <Button 
+                type="button"
+                variant="outline" 
+                className="w-full transition-smooth hover:shadow-card"
+                onClick={handleGoogleSignUp}
+              >
                 Continue with Google
               </Button>
-              <Button variant="outline" className="w-full transition-smooth hover:shadow-card">
+              <Button 
+                type="button"
+                variant="outline" 
+                className="w-full transition-smooth hover:shadow-card"
+                onClick={handleGithubSignUp}
+              >
                 Continue with GitHub
               </Button>
             </div>

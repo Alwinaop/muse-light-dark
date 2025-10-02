@@ -1,22 +1,95 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 export const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Check if user is already logged in
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        navigate("/");
+      }
+    });
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // TODO: Implement Supabase authentication
-    setTimeout(() => {
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        toast({
+          title: "Error signing in",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else if (data.user) {
+        toast({
+          title: "Welcome back!",
+          description: "You've successfully signed in.",
+        });
+        navigate("/");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleGithubSignIn = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+
+    if (error) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -60,6 +133,8 @@ export const SignIn = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="transition-smooth focus:ring-primary/20"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -74,6 +149,8 @@ export const SignIn = () => {
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
                     className="pr-10 transition-smooth focus:ring-primary/20"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                   />
                   <button
@@ -91,12 +168,6 @@ export const SignIn = () => {
                   <input type="checkbox" className="rounded border-border" />
                   <span>Remember me</span>
                 </label>
-                <button
-                  type="button"
-                  className="text-sm text-primary hover:underline transition-smooth"
-                >
-                  Forgot password?
-                </button>
               </div>
 
               <Button 
@@ -126,10 +197,20 @@ export const SignIn = () => {
 
             {/* Social sign in */}
             <div className="space-y-2">
-              <Button variant="outline" className="w-full transition-smooth hover:shadow-card">
+              <Button 
+                type="button"
+                variant="outline" 
+                className="w-full transition-smooth hover:shadow-card"
+                onClick={handleGoogleSignIn}
+              >
                 Continue with Google
               </Button>
-              <Button variant="outline" className="w-full transition-smooth hover:shadow-card">
+              <Button 
+                type="button"
+                variant="outline" 
+                className="w-full transition-smooth hover:shadow-card"
+                onClick={handleGithubSignIn}
+              >
                 Continue with GitHub
               </Button>
             </div>
