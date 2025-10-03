@@ -1,5 +1,5 @@
 import { Headphones, Sparkles, MonitorCog, ShieldCheck, Network, Wrench, PackageCheck, RefreshCw, ShieldAlert, Cpu, HardDrive, Fingerprint, Camera } from "lucide-react";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
@@ -71,53 +71,45 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 lg:py-36 bg-gradient-subtle">
-      <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="fade-in-up mb-6">
-            <span className="text-primary font-semibold text-base uppercase tracking-wider">Our Services</span>
-          </div>
-          <div className="fade-in-up stagger-1 mb-6">
-            <h2 className="text-4xl md:text-6xl font-heading font-bold leading-tight tracking-tight">
-              Comprehensive Solutions for{" "}
-              <span className="gradient-primary bg-clip-text text-transparent">
-                Your Business
-              </span>
+    <section id="services" className="py-20 lg:py-28 relative overflow-hidden bg-accent/30">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16 fade-in-up">
+            <div className="inline-block mb-4">
+              <span className="text-primary font-semibold uppercase tracking-wide text-sm">Our Services</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary dark:text-foreground mb-6 leading-tight">
+              Strategic <span className="text-primary">IT Support</span> for Your Business Growth
             </h2>
-          </div>
-          <div className="fade-in-up stagger-2">
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
-              We offer a full spectrum of technical services designed to keep your systems running 
-              smoothly and securely.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              From immediate IT assistance to comprehensive computer repairs, we handle 
+              it all to keep your systems smooth, secure, and up-to-date.
             </p>
           </div>
-        </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={service.title} className={`fade-in-up stagger-${index % 3 + 1}`}>
-              <div className="h-full group relative">
-                {/* Animated gradient border effect */}
-                <div className="absolute inset-0 gradient-primary rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
-                
-                <Card className="h-full relative hover:shadow-hover transition-all duration-500 border-2 border-border/40 hover:border-primary/50 glass-card overflow-hidden group-hover:-translate-y-2">
-                  <CardHeader className="space-y-4 p-8">
-                    <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
-                      <service.icon className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    <CardTitle className="text-xl font-heading font-semibold group-hover:text-primary transition-smooth">
-                      {service.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </div>
-            </div>
-          ))}
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <Card 
+                key={index}
+                className="fade-in-up group hover:shadow-hover transition-all duration-300 bg-card border-border hover:border-primary/30"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardContent className="p-8">
+                  <div className="mb-6 inline-flex p-4 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <service.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-secondary dark:text-foreground mb-4 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

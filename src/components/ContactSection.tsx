@@ -1,8 +1,9 @@
 import { Mail, Phone, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -12,149 +13,120 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-36">
-      <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="fade-in-up mb-6">
-            <span className="text-primary font-semibold text-base uppercase tracking-wider">Get in Touch</span>
-          </div>
-          <div className="fade-in-up stagger-1 mb-6">
-            <h2 className="text-4xl md:text-6xl font-heading font-bold leading-tight tracking-tight">
-              Get in{" "}
-              <span className="gradient-primary bg-clip-text text-transparent">
-                Touch
-              </span>
+    <section id="contact" className="py-20 lg:py-28 relative overflow-hidden bg-background">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 fade-in-up">
+            <div className="inline-block mb-4">
+              <span className="text-primary font-semibold uppercase tracking-wide text-sm">Contact Us</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary dark:text-foreground mb-6 leading-tight">
+              Get in <span className="text-primary">Touch</span>
             </h2>
-          </div>
-          <div className="fade-in-up stagger-2">
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
-              Have questions or need assistance? Contact us and we'll get back to you promptly.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Ready to solve your tech problems? Contact us today and let our experts help you.
             </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="fade-in-left">
-            <div className="space-y-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <div className="fade-in-left space-y-8">
               <div>
-                <h3 className="text-3xl font-heading font-bold mb-6">Contact Information</h3>
-                <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                  Reach out to us through any of these channels. We're here to help!
-                </p>
-              </div>
+                <h3 className="text-2xl font-heading font-bold text-secondary dark:text-foreground mb-6">Contact Information</h3>
+                <div className="space-y-6">
+                  <a href="mailto:ashwinsalessystems@gmail.com" className="flex items-start gap-4 group">
+                    <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-secondary dark:text-foreground mb-1">Email</p>
+                      <p className="text-muted-foreground">ashwinsalessystems@gmail.com</p>
+                    </div>
+                  </a>
+                  
+                  <a href="tel:+919987670993" className="flex items-start gap-4 group">
+                    <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-secondary dark:text-foreground mb-1">Phone</p>
+                      <p className="text-muted-foreground">+91 9987670993</p>
+                    </div>
+                  </a>
 
-              <div className="space-y-4">
-                <a 
-                  href="mailto:ashwinsalessystems@gmail.com"
-                  className="flex items-center space-x-5 p-6 rounded-2xl glass-card border-2 border-border/40 hover:border-primary/50 hover:shadow-card transition-all group"
-                >
-                  <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center group-hover:scale-110 transition-all shadow-lg">
-                    <Mail className="w-7 h-7 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg group-hover:text-primary transition-smooth">Email</h4>
-                    <p className="text-muted-foreground">ashwinsalessystems@gmail.com</p>
-                  </div>
-                </a>
-
-                <a 
-                  href="tel:+919987670993"
-                  className="flex items-center space-x-5 p-6 rounded-2xl glass-card border-2 border-border/40 hover:border-secondary/50 hover:shadow-card transition-all group"
-                >
-                  <div className="w-14 h-14 rounded-xl gradient-secondary flex items-center justify-center group-hover:scale-110 transition-all shadow-lg">
-                    <Phone className="w-7 h-7 text-secondary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg group-hover:text-secondary transition-smooth">Phone</h4>
-                    <p className="text-muted-foreground">+91 9987670993</p>
-                  </div>
-                </a>
-
-                <a 
-                  href="https://wa.me/919987670993"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-5 p-6 rounded-2xl glass-card border-2 border-border/40 hover:border-accent/50 hover:shadow-card transition-all group"
-                >
-                  <div className="w-14 h-14 rounded-xl gradient-accent flex items-center justify-center group-hover:scale-110 transition-all shadow-lg">
-                    <MessageCircle className="w-7 h-7 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg group-hover:text-accent transition-smooth">WhatsApp</h4>
-                    <p className="text-muted-foreground">+91 9987670993</p>
-                  </div>
-                </a>
+                  <a 
+                    href="https://wa.me/919987670993" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <MessageCircle className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-secondary dark:text-foreground mb-1">WhatsApp</p>
+                      <p className="text-muted-foreground">+91 9987670993</p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Contact Form */}
-          <div className="fade-in-right">
-            <div className="relative group">
-              <div className="absolute inset-0 gradient-primary rounded-3xl opacity-20 group-hover:opacity-30 blur-2xl transition-all duration-500"></div>
-              <Card className="shadow-elegant border-2 border-primary/20 glass-card relative">
-                <CardHeader className="space-y-2 p-8">
-                  <CardTitle className="text-2xl font-heading font-semibold">Send us a Message</CardTitle>
-                </CardHeader>
-                <CardContent className="p-8 pt-0">
+            {/* Contact Form */}
+            <div className="fade-in-right">
+              <Card className="shadow-card border-border bg-card">
+                <CardContent className="p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                        First Name
-                      </label>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-secondary dark:text-foreground">Name</Label>
+                        <Input 
+                          id="name" 
+                          placeholder="Your name" 
+                          required
+                          className="transition-smooth border-input focus:border-primary"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-secondary dark:text-foreground">Email</Label>
+                        <Input 
+                          id="email" 
+                          type="email" 
+                          placeholder="your@email.com" 
+                          required
+                          className="transition-smooth border-input focus:border-primary"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="subject" className="text-secondary dark:text-foreground">Subject</Label>
                       <Input 
-                        id="firstName" 
-                        placeholder="John" 
-                        className="transition-smooth focus:ring-primary/20"
+                        id="subject" 
+                        placeholder="How can we help?" 
+                        required
+                        className="transition-smooth border-input focus:border-primary"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                        Last Name
-                      </label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Doe" 
-                        className="transition-smooth focus:ring-primary/20"
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-secondary dark:text-foreground">Message</Label>
+                      <Textarea 
+                        id="message" 
+                        placeholder="Tell us more about your needs..." 
+                        rows={5}
+                        required
+                        className="transition-smooth resize-none border-input focus:border-primary"
                       />
                     </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="john@example.com"
-                      className="transition-smooth focus:ring-primary/20"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell us about your project..."
-                      rows={5}
-                      className="transition-smooth focus:ring-primary/20"
-                    />
-                  </div>
-
+                    
                     <Button 
                       type="submit" 
-                      className="w-full gradient-primary shadow-glow hover:shadow-hover hover:scale-[1.02] transition-all font-semibold rounded-2xl"
                       size="lg"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:shadow-hover transition-all font-semibold"
                     >
+                      <Send className="mr-2 h-5 w-5" />
                       Send Message
-                      <Send className="ml-2 h-4 w-4" />
                     </Button>
                   </form>
                 </CardContent>
