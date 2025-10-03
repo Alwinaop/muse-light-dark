@@ -1,7 +1,12 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { AboutSection } from "@/components/AboutSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { CTASection } from "@/components/CTASection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { BlogSection } from "@/components/BlogSection";
 import { ContactSection } from "@/components/ContactSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useEffect } from "react";
@@ -30,27 +35,22 @@ const Index = () => {
         <Navigation />
         <main>
           <HeroSection />
+          <FeaturesSection />
+          <AboutSection />
           <ServicesSection />
+          <CTASection />
+          <TestimonialsSection />
+          <BlogSection />
           <ContactSection />
         </main>
         
         {/* Footer */}
-        <footer className="border-t border-border py-12">
+        <footer className="border-t border-border py-8 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center">
-              <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent mb-4">
-                Ashwin Systems
-              </div>
-              <p className="text-muted-foreground mb-6">
-                Transforming businesses through innovative digital solutions
+              <p className="text-sm text-muted-foreground">
+                © 2024 Ashwin Systems. All rights reserved.
               </p>
-              <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
-                <span>© 2024 Ashwin Systems. All rights reserved.</span>
-                <span>•</span>
-                <a href="#" className="hover:text-primary transition-smooth">Privacy Policy</a>
-                <span>•</span>
-                <a href="#" className="hover:text-primary transition-smooth">Terms of Service</a>
-              </div>
             </div>
           </div>
         </footer>
