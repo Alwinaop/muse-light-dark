@@ -1,24 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
-import techNews from "@/assets/tech-news.jpg";
 
 export const BlogSection = () => {
   const posts = [
     {
-      image: techNews,
       date: "January 7, 2025",
       title: "Keep Your Data Safe with FixPro's Backup and Recovery Solutions",
       excerpt: "Learn how to protect your valuable data with our comprehensive backup and recovery services."
     },
     {
-      image: techNews,
       date: "January 5, 2025",
       title: "Essential Computer Maintenance Tips for 2025",
       excerpt: "Discover the best practices to keep your computer running smoothly throughout the year."
     },
     {
-      image: techNews,
       date: "January 3, 2025",
       title: "Understanding Network Security: A Complete Guide",
       excerpt: "Everything you need to know about securing your network infrastructure."
@@ -50,16 +46,9 @@ export const BlogSection = () => {
             {posts.map((post, index) => (
               <Card 
                 key={index}
-                className="fade-in-up overflow-hidden border-border hover:shadow-hover transition-all group cursor-pointer"
+                className="fade-in-up border-border hover:shadow-hover transition-all group cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="overflow-hidden">
-                  <img 
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                     <Calendar className="h-4 w-4" />

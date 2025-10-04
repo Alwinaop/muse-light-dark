@@ -1,20 +1,10 @@
 import { Award, MessageCircle } from "lucide-react";
-import techService from "@/assets/tech-service.jpg";
 
 export const FeaturesSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-primary">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Feature Image */}
-          <div className="mb-16 fade-in-up">
-            <img 
-              src={techService}
-              alt="Professional Computer Repair Services" 
-              className="w-full rounded-2xl shadow-hover"
-            />
-          </div>
-
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* Certified Expertise */}

@@ -1,4 +1,3 @@
-import techRepair from "@/assets/tech-repair.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -7,18 +6,9 @@ export const AboutSection = () => {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image */}
-            <div className="fade-in-left">
-              <img 
-                src={techRepair}
-                alt="Computer Repair and IT Services" 
-                className="w-full rounded-2xl shadow-card"
-              />
-            </div>
-
+          <div className="max-w-4xl mx-auto">
             {/* Content */}
-            <div className="fade-in-right">
+            <div className="fade-in-up text-center">
               <div className="mb-4">
                 <span className="text-primary font-semibold uppercase tracking-wide text-sm">About Us</span>
               </div>

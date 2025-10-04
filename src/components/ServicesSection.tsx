@@ -1,5 +1,6 @@
 import { Headphones, Sparkles, MonitorCog, ShieldCheck, Network, Wrench, PackageCheck, RefreshCw, ShieldAlert, Cpu, HardDrive, Fingerprint, Camera } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import cctvRepair from "@/assets/cctv-repair.jpg";
 
 const services = [
   {
@@ -86,6 +87,15 @@ export const ServicesSection = () => {
               From immediate IT assistance to comprehensive computer repairs, we handle 
               it all to keep your systems smooth, secure, and up-to-date.
             </p>
+          </div>
+
+          {/* Feature Image */}
+          <div className="mb-16 fade-in-up">
+            <img 
+              src={cctvRepair}
+              alt="CCTV Installation and Repair Services" 
+              className="w-full rounded-2xl shadow-hover"
+            />
           </div>
 
           {/* Services Grid */}
