@@ -140,10 +140,16 @@ export const ServicesSection = () => {
                     </div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-heading font-bold text-secondary dark:text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 
+                      className="text-xl font-heading font-bold text-secondary dark:text-foreground mb-3 group-hover:text-primary transition-colors"
+                      data-testid={`text-service-title-${index}`}
+                    >
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+                    <p 
+                      className="text-muted-foreground leading-relaxed mb-4"
+                      data-testid={`text-service-description-${index}`}
+                    >
                       {service.description}
                     </p>
                     <a 
