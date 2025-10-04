@@ -4,9 +4,6 @@ import { HeroSection } from "@/components/HeroSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ServicesSection } from "@/components/ServicesSection";
-import { CTASection } from "@/components/CTASection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { BlogSection } from "@/components/BlogSection";
 import { ContactSection } from "@/components/ContactSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useEffect } from "react";
@@ -38,9 +35,6 @@ const Index = () => {
           <FeaturesSection />
           <AboutSection />
           <ServicesSection />
-          <CTASection />
-          <TestimonialsSection />
-          <BlogSection />
           <ContactSection />
         </main>
         
