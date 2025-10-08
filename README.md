@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/c16edfcc-be06-4fcc-a9d7-a05cd09afd91
+**URL**: https://f77a7854-0d14-4245-980f-7e78409ef05b-00-3w410jft0tddq.pike.replit.dev/
 
 ## How can I edit this code?
 
