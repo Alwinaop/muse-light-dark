@@ -2,11 +2,11 @@ import { Award, MessageCircle } from "lucide-react";
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-primary">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+    <section className="py-16 lg:py-20 bg-primary">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12">
+        <div className="max-w-7xl mx-auto">
           {/* Features Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
             {/* Certified Expertise */}
             <div className="fade-in-left text-white">
               <div className="mb-6">

@@ -98,25 +98,25 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 lg:py-28 relative overflow-hidden bg-accent/30">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto">
+    <section id="services" className="py-16 lg:py-20 relative overflow-hidden bg-accent/30">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 fade-in-up">
             <div className="inline-block mb-4">
               <span className="text-primary font-semibold uppercase tracking-wide text-sm">Our Services</span>
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary dark:text-foreground mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-secondary dark:text-foreground mb-6 leading-tight">
               Strategic <span className="text-primary">IT Support</span> for Your Business Growth
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               From immediate IT assistance to comprehensive computer repairs, we handle 
               it all to keep your systems smooth, secure, and up-to-date.
             </p>
           </div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service, index) => {
               const whatsappMessage = encodeURIComponent(`Hi! I'm interested in ${service.title}. Can you provide more details?`);
               const whatsappLink = `https://wa.me/919987670993?text=${whatsappMessage}`;

@@ -2,17 +2,17 @@ import { Mail, Phone, MessageCircle } from "lucide-react";
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 lg:py-28 relative overflow-hidden bg-background">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-16 lg:py-20 relative overflow-hidden bg-background">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12 relative z-10">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 fade-in-up">
             <div className="inline-block mb-4">
               <span className="text-primary font-semibold uppercase tracking-wide text-sm">Contact Us</span>
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary dark:text-foreground mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-secondary dark:text-foreground mb-6 leading-tight">
               Get in <span className="text-primary">Touch</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Ready to solve your tech problems? Contact us today and let our experts help you.
             </p>
           </div>
