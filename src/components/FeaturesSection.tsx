@@ -9,11 +9,11 @@ export const FeaturesSection = () => {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
             {/* Certified Expertise */}
             <div className="fade-in-left text-white">
-              <div className="mb-6">
-                <div className="inline-flex p-4 rounded-2xl bg-white/10 backdrop-blur-sm mb-6">
-                  <Award className="h-12 w-12 text-white" strokeWidth={1.5} />
-                </div>
+            <div className="mb-6">
+              <div className="inline-flex p-4 rounded-2xl bg-white/10 backdrop-blur-sm mb-6">
+                <Award className="h-12 w-12 text-white" strokeWidth={1.5} aria-hidden="true" />
               </div>
+            </div>
               <h3 className="text-3xl md:text-4xl font-heading font-bold mb-4">
                 Certified Expertise
               </h3>
@@ -27,7 +27,7 @@ export const FeaturesSection = () => {
             <div className="fade-in-right text-white">
               <div className="mb-6">
                 <div className="inline-flex p-4 rounded-2xl bg-white/10 backdrop-blur-sm mb-6">
-                  <MessageCircle className="h-12 w-12 text-white" strokeWidth={1.5} />
+                  <MessageCircle className="h-12 w-12 text-white" strokeWidth={1.5} aria-hidden="true" />
                 </div>
               </div>
               <h3 className="text-3xl md:text-4xl font-heading font-bold mb-4">

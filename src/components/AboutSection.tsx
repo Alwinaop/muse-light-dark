@@ -33,9 +33,10 @@ export const AboutSection = () => {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
+                aria-label="Learn more about our services"
               >
                 Learn More
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
           </div>
         </div>

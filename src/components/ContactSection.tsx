@@ -23,9 +23,10 @@ export const ContactSection = () => {
                 href="mailto:ashwinsalessystems@gmail.com" 
                 className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all group"
                 data-testid="link-email"
+                aria-label="Send email to Ashwin Systems at ashwinsalessystems@gmail.com"
               >
                 <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                  <Mail className="h-6 w-6 text-primary" />
+                  <Mail className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold text-secondary dark:text-foreground mb-1">Email</p>
@@ -37,9 +38,10 @@ export const ContactSection = () => {
                 href="tel:+919987670993" 
                 className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all group"
                 data-testid="link-phone"
+                aria-label="Call Ashwin Systems at +91 9987670993"
               >
                 <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <Phone className="h-6 w-6 text-primary" />
+                  <Phone className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-semibold text-secondary dark:text-foreground mb-1">Phone</p>
@@ -53,9 +55,10 @@ export const ContactSection = () => {
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all group"
                 data-testid="link-whatsapp"
+                aria-label="Message Ashwin Systems on WhatsApp"
               >
                 <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <MessageCircle className="h-6 w-6 text-primary" />
+                  <MessageCircle className="h-6 w-6 text-primary" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-semibold text-secondary dark:text-foreground mb-1">WhatsApp</p>

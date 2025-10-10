@@ -32,8 +32,11 @@ export const HeroSection = () => {
             <div className="fade-in-right lg:pl-8">
               <img 
                 src={laptopRepair}
-                alt="Laptop Repair Services" 
+                alt="Professional laptop repair services showing technician working on computer hardware diagnostics and troubleshooting" 
                 className="w-full rounded-2xl shadow-hover max-h-[500px] object-cover"
+                loading="eager"
+                width="800"
+                height="500"
               />
             </div>
           </div>

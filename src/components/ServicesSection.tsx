@@ -131,12 +131,15 @@ export const ServicesSection = () => {
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={service.image} 
-                      alt={service.title}
+                      alt={`${service.title} - ${service.description}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      width="400"
+                      height="192"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 inline-flex p-3 rounded-xl bg-primary/90 backdrop-blur-sm">
-                      <service.icon className="h-6 w-6 text-white" strokeWidth={2} />
+                      <service.icon className="h-6 w-6 text-white" strokeWidth={2} aria-hidden="true" />
                     </div>
                   </div>
                   <CardContent className="p-6">
@@ -161,8 +164,9 @@ export const ServicesSection = () => {
                       <Button 
                         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                         size="sm"
+                        aria-label={`Book ${service.title} service on WhatsApp`}
                       >
-                        <Calendar className="mr-2 h-4 w-4" />
+                        <Calendar className="mr-2 h-4 w-4" aria-hidden="true" />
                         Book Now
                       </Button>
                     </a>

@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# Ashwin Systems - Professional Technical Services
 
-## Project info
+Welcome to Ashwin Systems - your trusted partner for computer repair, CCTV installation, and comprehensive technical support services.
 
-**URL**: https://f77a7854-0d14-4245-980f-7e78409ef05b-00-3w410jft0tddq.pike.replit.dev/
+## 🎯 About
 
-## How can I edit this code?
+Ashwin Systems provides professional IT solutions including:
+- Computer & laptop repair
+- CCTV security system installation
+- Hardware & software troubleshooting
+- Network configuration
+- Biometric systems
+- 24/7 technical support
 
-There are several ways of editing your application.
+## 🚀 Technology Stack
 
-**Use Lovable**
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Shadcn/ui + Radix UI
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
+- **State Management**: TanStack Query
+- **Backend**: Supabase (Lovable Cloud)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c16edfcc-be06-4fcc-a9d7-a05cd09afd91) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Install dependencies
+npm install
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Run development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- ✨ Modern, responsive design
+- 🌓 Dark/Light mode support
+- 📱 Mobile-first approach
+- ♿ Accessibility compliant
+- 🔍 SEO optimized
+- ⚡ Performance optimized
+- 🎭 Professional animations
+- 🔒 Error boundary protection
 
-**Use GitHub Codespaces**
+## 📞 Contact
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Email**: ashwinsalessystems@gmail.com
+- **Phone**: +91 9987670993
+- **WhatsApp**: +91 9987670993
 
-## What technologies are used for this project?
+## 🚀 Deployment
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
+This project is production-ready and optimized for deployment. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions and checklist.
 
 Simply open [Lovable](https://lovable.dev/projects/c16edfcc-be06-4fcc-a9d7-a05cd09afd91) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## 🌐 Custom Domain
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Yes, you can connect a custom domain! Navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## 🛠️ Development
+
+Built with ❤️ using Lovable - The AI-powered web app builder.
+
+**Project URL**: https://lovable.dev/projects/c16edfcc-be06-4fcc-a9d7-a05cd09afd91
+
+## 📄 License
+
+© 2024 Ashwin Systems. All rights reserved.
