@@ -41,18 +41,18 @@ export const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card shadow-card transition-smooth">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="text-2xl font-heading font-bold gradient-primary bg-clip-text text-transparent tracking-tight flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg gradient-primary"></div>
+          <div className="flex items-center flex-shrink-0">
+            <div className="text-xl lg:text-2xl font-heading font-bold gradient-primary bg-clip-text text-transparent tracking-tight flex items-center gap-2">
+              <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-lg gradient-primary"></div>
               Ashwin Systems
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <button
               onClick={() => scrollToSection("home")}
               className="text-foreground/70 hover:text-primary font-medium transition-smooth relative group"
@@ -77,7 +77,7 @@ export const Navigation = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 lg:space-x-3">
             {/* Theme Toggle */}
             <Button
               variant="outline"
@@ -92,10 +92,10 @@ export const Navigation = () => {
 
             {/* Desktop Auth Buttons */}
             {user ? (
-              <div className="hidden md:flex items-center space-x-3">
+              <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
                 <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-primary/10">
                   <User className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium">{user.email}</span>
+                  <span className="text-sm font-medium truncate max-w-[120px] xl:max-w-none">{user.email}</span>
                 </div>
                 <Button
                   onClick={handleSignOut}
@@ -108,7 +108,7 @@ export const Navigation = () => {
                 </Button>
               </div>
             ) : (
-              <div className="hidden md:flex items-center space-x-3">
+              <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
                 <Link to="/signin">
                   <Button variant="ghost" size="sm" className="transition-smooth">
                     Sign In
@@ -126,7 +126,7 @@ export const Navigation = () => {
             <Button
               variant="outline"
               size="sm"
-              className="md:hidden"
+              className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <Menu className="h-4 w-4" />
@@ -136,7 +136,7 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-3">
               <button
                 onClick={() => scrollToSection("home")}
