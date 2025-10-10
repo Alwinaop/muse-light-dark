@@ -24,12 +24,12 @@ export const ContactSection = () => {
                 className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all group"
                 data-testid="link-email"
               >
-                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors flex-shrink-0">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="font-semibold text-secondary dark:text-foreground mb-1">Email</p>
-                  <p className="text-muted-foreground">ashwinsalessystems@gmail.com</p>
+                  <p className="text-muted-foreground break-all text-sm sm:text-base">ashwinsalessystems@gmail.com</p>
                 </div>
               </a>
               
